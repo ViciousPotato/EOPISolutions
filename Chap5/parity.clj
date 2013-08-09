@@ -7,3 +7,4 @@
      (parity1 (bit-shift-right x 1)))))
 
 (println (parity1 8))
+(println (parity1 9))
