@@ -22,3 +22,16 @@ We can see from the code that that constructs we look for in different languages
 3. binary operations on integers
 
 Once we have all these constructs, we could construct our program.
+
+### Swap bits
+
+Notice the operator precedence:
+
+    if (((x >> l) & 1) != ((x >> j) & 1)) {
+
+vs.
+
+    if ((x >> l) & 1 != (x >> j) & 1) {
+    
+Also long literals should end with `L`, `1L << 63` is very different
+with `1 << 63`.
