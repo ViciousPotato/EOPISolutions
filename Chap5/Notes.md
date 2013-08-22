@@ -35,3 +35,5 @@ vs.
     
 Also long literals should end with `L`, `1L << 63` is very different
 with `1 << 63`.
+
+Use `bitset<N>` to show binary representations of numbers in C++.
