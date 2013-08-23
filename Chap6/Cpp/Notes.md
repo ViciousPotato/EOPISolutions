@@ -1,12 +1,12 @@
 ## Dutch Flag
 
 C++ 11 vector initialization syntax and the classical vector
-initialization syntax.
+initialization [syntax](http://www.cplusplus.com/articles/EzywvCM9/).
 
 `std::equal` usage.
 
 Debug vector:
-
-    copy(v.begin(), v.end(), ostream_iterator<T>(cout, " "))
-    
+```c++
+copy(v.begin(), v.end(), ostream_iterator<T>(cout, " "))
+```    
    
