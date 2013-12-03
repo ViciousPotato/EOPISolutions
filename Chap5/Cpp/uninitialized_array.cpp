@@ -17,9 +17,7 @@ public:
   }
 
   bool isValid(int i) {
-	// This solution is not right!!!!
-	// When _reverseLookup is filled with garbage value, it would give any result to index _initializedIndex array.
-    return i >= 0 && i < _len && _initializedIndex[_reverseLookup[i]] == i;
+    return i >= 0 && _reverseLookup[i] < _validRange && _initializedIndex[_reverseLookup[i]] == i;
   }
 
   bool read(int i, T& val) {
@@ -55,7 +53,7 @@ int main() {
   assert(!arr.read(5, val));
   arr.write(5, 100);
   assert(arr.read(5, val));
-  assert(val == 5);
+  assert(val == 100);
 
   return 0;
 }
