@@ -17,7 +17,9 @@ public:
   }
 
   bool isValid(int i) {
-    return i >= 0 && i < _validRange && _initializedIndex[_reverseLookup[i]] == i;
+	// This solution is not right!!!!
+	// When _reverseLookup is filled with garbage value, it would give any result to index _initializedIndex array.
+    return i >= 0 && i < _len && _initializedIndex[_reverseLookup[i]] == i;
   }
 
   bool read(int i, T& val) {
@@ -42,13 +44,18 @@ private:
   T *_reverseLookup;
   int _validRange;
   int _len;
-}
+};
 
 int main() {
-  UnArr arr(100);
-  assert(!arr.read(-1));
-  assert(!arr.read(100));
-  
-  std::cout << arr[89] << std::endl;
+  UnArr<int> arr(100);
+  int val;
+  assert(!arr.read(-1, val));
+  assert(!arr.read(100, val));
+
+  assert(!arr.read(5, val));
+  arr.write(5, 100);
+  assert(arr.read(5, val));
+  assert(val == 5);
+
   return 0;
 }
